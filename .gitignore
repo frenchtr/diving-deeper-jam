@@ -70,3 +70,14 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# End of Unity .gitignore settings
+#
+# Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
+#
+
+# Custom Ignores
+*/[Ss]cenes/[Tt]ravis.unity
+*/[Ss]cenes/[Tt]ravis.unity.meta
+*/[Ss]cenes/[Oo]liver.unity
+*/[Ss]cenes/[Oo]liver.unity.meta
