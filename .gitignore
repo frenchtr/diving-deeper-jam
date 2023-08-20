@@ -77,7 +77,3 @@ crashlytics-build.properties
 #
 
 # Custom Ignores
-*/[Ss]cenes/[Tt]ravis.unity
-*/[Ss]cenes/[Tt]ravis.unity.meta
-*/[Ss]cenes/[Oo]liver.unity
-*/[Ss]cenes/[Oo]liver.unity.meta
