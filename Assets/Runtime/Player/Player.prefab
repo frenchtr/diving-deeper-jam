@@ -232,8 +232,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   horizontalMovementSpeed: 10
-  bounceHeight: 10
-  gravity: 20
+  bounceHeight: 5
+  gravity: 25
   maxMovementTilt: -10
   movementTiltSpeed: 0.05
   sprite: {fileID: 8665697901095257139}
