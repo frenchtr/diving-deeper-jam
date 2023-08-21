@@ -4985,9 +4985,12 @@ MonoBehaviour:
   gravity: 15
   maxMovementTilt: -10
   movementTiltSpeed: 0.05
-  dronePitchChangeSpeed: 0.8
-  maxSpeedDronePitch: 1
+  effectsTweenSpeed: 2
   minSpeedDronePitch: 0.7
+  maxSpeedDronePitch: 1
+  minAnimatorSpeed: 0.25
+  maxAnimatorSpeed: 2.5
+  smokeParticles: {fileID: 0}
   sprite: {fileID: 8665697901095257139}
   drillDrone:
     clip:

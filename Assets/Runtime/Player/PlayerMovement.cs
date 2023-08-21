@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class PlayerMovement : PlayerComponent {
 
+    [Header("Movement")]
     [SerializeField] private float
-        horizontalMovementSpeed,
+        horizontalMovementSpeed;
+    [SerializeField] private float
         bounceHeight,
-        gravity,
-        maxMovementTilt,
+        gravity;
+
+    [Header("Effects")]
+    [SerializeField] private float
+        maxMovementTilt;
+    [SerializeField] private float
         movementTiltSpeed,
-        dronePitchChangeSpeed,
+        effectsTweenSpeed,
+        minSpeedDronePitch,
         maxSpeedDronePitch,
-        minSpeedDronePitch;
+        minAnimatorSpeed,
+        maxAnimatorSpeed;
+
     [SerializeField] private Transform
         sprite;
     [SerializeField] private SoundEffect
@@ -20,7 +29,7 @@ public class PlayerMovement : PlayerComponent {
 
     private float
         tiltAmount, tiltVel,
-        dronePitch;
+        effectsPercent;
 
     private void Start() {
         drillDrone.Init(gameObject);
@@ -36,9 +45,10 @@ public class PlayerMovement : PlayerComponent {
         tiltAmount = Mathf.SmoothDampAngle(tiltAmount, input.x * maxMovementTilt, ref tiltVel, movementTiltSpeed);
         sprite.eulerAngles = Vector3.forward * tiltAmount;
 
-        float dronePitchTarget = Mathf.LerpUnclamped(minSpeedDronePitch, maxSpeedDronePitch, Mathf.Abs(input.x));
-        dronePitch = Mathf.MoveTowards(dronePitch, dronePitchTarget, dronePitchChangeSpeed * Time.deltaTime);
-        drillDrone.source.pitch = dronePitch;
+        effectsPercent = Mathf.MoveTowards(effectsPercent, Mathf.Abs(input.x), effectsTweenSpeed * Time.deltaTime);
+
+        drillDrone.source.pitch = Mathf.LerpUnclamped(minSpeedDronePitch, maxSpeedDronePitch, effectsPercent);
+        Animator.speed = Mathf.LerpUnclamped(minAnimatorSpeed, maxAnimatorSpeed, effectsPercent);
 
         vel.x = horizontalMovementSpeed * input.x;
         vel.y -= gravity * Time.deltaTime;
