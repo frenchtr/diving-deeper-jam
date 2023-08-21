@@ -49,8 +49,13 @@ public class SoundEffect {
         // play sound
         source.loop = loop;
         source.pitch = Random.Range(minPitch, maxPitch);
-        source.PlayOneShot(currentClip);
         source.volume = volume;
+
+        if (loop) {
+            source.clip = currentClip;
+            source.Play();
+        }
+        else source.PlayOneShot(currentClip);
     }
 
     /// <summary> Stop the sound effect. </summary>
