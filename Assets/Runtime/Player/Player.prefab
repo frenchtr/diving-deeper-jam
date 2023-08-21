@@ -181,8 +181,8 @@ GameObject:
   - component: {fileID: 5254155692320797935}
   - component: {fileID: 971129818236909934}
   - component: {fileID: 4227908006875858840}
-  - component: {fileID: 8665697901571075958}
   - component: {fileID: 8665697901571075944}
+  - component: {fileID: 8315775585031559408}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -236,8 +236,19 @@ MonoBehaviour:
   gravity: 25
   maxMovementTilt: -10
   movementTiltSpeed: 0.05
+  dronePitchChangeSpeed: 0.8
+  maxSpeedDronePitch: 1
+  minSpeedDronePitch: 0.7
   sprite: {fileID: 8665697901095257139}
-  groundDetectPosition: {fileID: 8665697902118814899}
+  drillDrone:
+    clip:
+    - {fileID: 8300000, guid: 440c8d4a910ca41149a04bbea61cabbe, type: 3}
+    volume: 0.1
+    minPitch: 1
+    maxPitch: 1
+    sequential: 0
+    overlap: 1
+    loop: 1
 --- !u!114 &4227908006875858840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,22 +290,6 @@ MonoBehaviour:
     type: 0
     keycodes: 
     mouseButton: 0
---- !u!58 &8665697901571075958
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8665697901571075953}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: 71b51fbd4ca6b4cbc81fcc82c9b7d2f7, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!50 &8665697901571075944
 Rigidbody2D:
   serializedVersion: 4
@@ -316,6 +311,32 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!61 &8315775585031559408
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8665697901571075953}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 71b51fbd4ca6b4cbc81fcc82c9b7d2f7, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.1}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.2}
+  m_EdgeRadius: 0
 --- !u!1 &8665697902118814898
 GameObject:
   m_ObjectHideFlags: 0

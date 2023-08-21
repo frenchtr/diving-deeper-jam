@@ -9,12 +9,23 @@ public class PlayerMovement : PlayerComponent {
         bounceHeight,
         gravity,
         maxMovementTilt,
-        movementTiltSpeed;
+        movementTiltSpeed,
+        dronePitchChangeSpeed,
+        maxSpeedDronePitch,
+        minSpeedDronePitch;
     [SerializeField] private Transform
-        sprite,
-        groundDetectPosition;
+        sprite;
+    [SerializeField] private SoundEffect
+        drillDrone;
 
-    private float tiltAmount, tiltVel;
+    private float
+        tiltAmount, tiltVel,
+        dronePitch;
+
+    private void Start() {
+        drillDrone.Init(gameObject);
+        drillDrone.Play();
+    }
 
     private void Update() {
 
@@ -22,19 +33,27 @@ public class PlayerMovement : PlayerComponent {
             input = Input.Movement.Vector,
             vel = Rigidbody.velocity;
 
-        Vector2 toGroundDetectPosition = groundDetectPosition.position - transform.position;
-        var onGround = Physics2D.Raycast(transform.position, toGroundDetectPosition, toGroundDetectPosition.magnitude, GameInfo.GroundMask);
-
         tiltAmount = Mathf.SmoothDampAngle(tiltAmount, input.x * maxMovementTilt, ref tiltVel, movementTiltSpeed);
         sprite.eulerAngles = Vector3.forward * tiltAmount;
 
-        vel.x = horizontalMovementSpeed * input.x;
+        float dronePitchTarget = Mathf.LerpUnclamped(minSpeedDronePitch, maxSpeedDronePitch, Mathf.Abs(input.x));
+        dronePitch = Mathf.MoveTowards(dronePitch, dronePitchTarget, dronePitchChangeSpeed * Time.deltaTime);
+        drillDrone.source.pitch = dronePitch;
 
-        if (onGround)
-            vel.y = Mathf.Sqrt(bounceHeight * gravity * 2);
-        else
-            vel.y -= gravity * Time.deltaTime;
+        vel.x = horizontalMovementSpeed * input.x;
+        vel.y -= gravity * Time.deltaTime;
 
         Rigidbody.velocity = vel;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision) {
+
+        if (collision.gameObject.layer == GameInfo.GroundLayer
+            && collision.GetContact(0).normal == Vector2.up) {
+
+            Vector3 vel = Rigidbody.velocity;
+            vel.y = Mathf.Sqrt(bounceHeight * gravity * 2);
+            Rigidbody.velocity =vel;
+        }
     }
 }
