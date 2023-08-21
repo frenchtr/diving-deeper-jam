@@ -675,30 +675,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6326425267519714402, guid: 6e0104c3962b04e6697c8e6b983fbc8f, type: 3}
-      propertyPath: m_BackGroundColor.b
-      value: 0.515
-      objectReference: {fileID: 0}
-    - target: {fileID: 6326425267519714402, guid: 6e0104c3962b04e6697c8e6b983fbc8f, type: 3}
-      propertyPath: m_BackGroundColor.g
-      value: 0.515
-      objectReference: {fileID: 0}
-    - target: {fileID: 6326425267519714402, guid: 6e0104c3962b04e6697c8e6b983fbc8f, type: 3}
-      propertyPath: m_BackGroundColor.r
-      value: 0.515
-      objectReference: {fileID: 0}
-    - target: {fileID: 6326425267519714402, guid: 6e0104c3962b04e6697c8e6b983fbc8f, type: 3}
-      propertyPath: m_NormalizedViewPortRect.x
-      value: 0.00058038306
-      objectReference: {fileID: 0}
-    - target: {fileID: 6326425267519714402, guid: 6e0104c3962b04e6697c8e6b983fbc8f, type: 3}
-      propertyPath: m_NormalizedViewPortRect.width
-      value: 0.9982588
-      objectReference: {fileID: 0}
-    - target: {fileID: 6326425267519714402, guid: 6e0104c3962b04e6697c8e6b983fbc8f, type: 3}
-      propertyPath: m_NormalizedViewPortRect.height
-      value: 0.99896806
-      objectReference: {fileID: 0}
     - target: {fileID: 6326425267519714412, guid: 6e0104c3962b04e6697c8e6b983fbc8f, type: 3}
       propertyPath: m_Name
       value: Main Camera
