@@ -41,6 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Player
+    uniqueID: 3136428209
+    locked: 0
   - name: Edge Walls
     uniqueID: 1917774969
     locked: 0
