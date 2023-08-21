@@ -285,8 +285,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.4
-      minScalar: 0.1
+      scalar: 0.6
+      minScalar: 0.05
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -867,7 +867,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 100
+      scalar: 150
       minScalar: 20
       maxCurve:
         serializedVersion: 2
@@ -973,10 +973,10 @@ ParticleSystem:
     m_BurstCount: 0
     m_Bursts: []
   SizeModule:
-    enabled: 0
+    enabled: 1
     curve:
       serializedVersion: 2
-      minMaxState: 1
+      minMaxState: 2
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -984,22 +984,22 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0
-          inSlope: 0
-          outSlope: 1
-          tangentMode: 0
+          value: 1
+          inSlope: -1
+          outSlope: -1
+          tangentMode: 34
           weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
+          inWeight: 0
+          outWeight: 0
         - serializedVersion: 3
           time: 1
-          value: 1
-          inSlope: 1
-          outSlope: 0
-          tangentMode: 0
+          value: 0
+          inSlope: -1
+          outSlope: -1
+          tangentMode: 34
           weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
+          inWeight: 0
+          outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
@@ -1017,7 +1017,7 @@ ParticleSystem:
           outWeight: 0.33333334
         - serializedVersion: 3
           time: 1
-          value: 1
+          value: 0.5
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -1029,7 +1029,7 @@ ParticleSystem:
         m_RotationOrder: 4
     y:
       serializedVersion: 2
-      minMaxState: 1
+      minMaxState: 2
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -1082,7 +1082,7 @@ ParticleSystem:
         m_RotationOrder: 4
     z:
       serializedVersion: 2
-      minMaxState: 1
+      minMaxState: 2
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -1138,7 +1138,7 @@ ParticleSystem:
     enabled: 0
     x:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -1191,9 +1191,9 @@ ParticleSystem:
         m_RotationOrder: 4
     y:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
-      minScalar: 0
+      minScalar: 1.5707963
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1244,9 +1244,9 @@ ParticleSystem:
         m_RotationOrder: 4
     curve:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0.7853982
-      minScalar: 0.7853982
+      minMaxState: 3
+      scalar: 0
+      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -4990,7 +4990,6 @@ MonoBehaviour:
   maxSpeedDronePitch: 1
   minAnimatorSpeed: 0.25
   maxAnimatorSpeed: 2.5
-  smokeParticles: {fileID: 0}
   sprite: {fileID: 8665697901095257139}
   drillDrone:
     clip:
@@ -5087,7 +5086,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.125}
+  m_Size: {x: 0.75, y: 1.125}
   m_EdgeRadius: 0
 --- !u!1 &8665697902118814898
 GameObject:
