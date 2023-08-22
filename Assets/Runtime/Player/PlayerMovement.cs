@@ -2,68 +2,71 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : PlayerComponent {
+namespace OTStudios.DDJ.Runtime {
 
-    [Header("Movement")]
-    [SerializeField] private float
-        horizontalMovementSpeed;
-    [SerializeField] private float
-        bounceHeight,
-        gravity;
+    public class PlayerMovement : PlayerComponent {
 
-    [Header("Effects")]
-    [SerializeField] private float
-        maxMovementTilt;
-    [SerializeField] private float
-        movementTiltSpeed,
-        effectsTweenSpeed,
-        minSpeedDronePitch,
-        maxSpeedDronePitch,
-        minAnimatorSpeed,
-        maxAnimatorSpeed;
+        [Header("Movement")]
+        [SerializeField] private float
+            horizontalMovementSpeed;
+        [SerializeField] private float
+            bounceHeight,
+            gravity;
 
-    [SerializeField] private Transform
-        sprite;
-    [SerializeField] private SoundEffect
-        drillDrone;
+        [Header("Effects")]
+        [SerializeField] private float
+            maxMovementTilt;
+        [SerializeField] private float
+            movementTiltSpeed,
+            effectsTweenSpeed,
+            minSpeedDronePitch,
+            maxSpeedDronePitch,
+            minAnimatorSpeed,
+            maxAnimatorSpeed;
 
-    private float
-        tiltAmount, tiltVel,
-        effectsPercent;
+        [SerializeField] private Transform
+            sprite;
+        [SerializeField] private SoundEffect
+            drillDrone;
 
-    private void Start() {
-        drillDrone.Init(gameObject);
-        drillDrone.Play();
-    }
+        private float
+            tiltAmount, tiltVel,
+            effectsPercent;
 
-    private void Update() {
+        private void Start() {
+            drillDrone.Init(gameObject);
+            drillDrone.Play();
+        }
 
-        Vector2
-            input = Input.Movement.Vector,
-            vel = Rigidbody.velocity;
+        private void Update() {
 
-        tiltAmount = Mathf.SmoothDampAngle(tiltAmount, input.x * maxMovementTilt, ref tiltVel, movementTiltSpeed);
-        sprite.eulerAngles = Vector3.forward * tiltAmount;
+            Vector2
+                input = Input.Movement.Vector,
+                vel = Rigidbody.velocity;
 
-        effectsPercent = Mathf.MoveTowards(effectsPercent, Mathf.Abs(input.x), effectsTweenSpeed * Time.deltaTime);
+            tiltAmount = Mathf.SmoothDampAngle(tiltAmount, input.x * maxMovementTilt, ref tiltVel, movementTiltSpeed);
+            sprite.eulerAngles = Vector3.forward * tiltAmount;
 
-        drillDrone.source.pitch = Mathf.LerpUnclamped(minSpeedDronePitch, maxSpeedDronePitch, effectsPercent);
-        Animator.speed = Mathf.LerpUnclamped(minAnimatorSpeed, maxAnimatorSpeed, effectsPercent);
+            effectsPercent = Mathf.MoveTowards(effectsPercent, Mathf.Abs(input.x), effectsTweenSpeed * Time.deltaTime);
 
-        vel.x = horizontalMovementSpeed * input.x;
-        vel.y -= gravity * Time.deltaTime;
+            drillDrone.source.pitch = Mathf.LerpUnclamped(minSpeedDronePitch, maxSpeedDronePitch, effectsPercent);
+            Animator.speed = Mathf.LerpUnclamped(minAnimatorSpeed, maxAnimatorSpeed, effectsPercent);
 
-        Rigidbody.velocity = vel;
-    }
+            vel.x = horizontalMovementSpeed * input.x;
+            vel.y -= gravity * Time.deltaTime;
 
-    private void OnCollisionEnter2D(Collision2D collision) {
+            Rigidbody.velocity = vel;
+        }
 
-        if (collision.gameObject.layer == GameInfo.GroundLayer
-            && collision.GetContact(0).normal == Vector2.up) {
+        private void OnCollisionEnter2D(Collision2D collision) {
 
-            Vector3 vel = Rigidbody.velocity;
-            vel.y = Mathf.Sqrt(bounceHeight * gravity * 2);
-            Rigidbody.velocity =vel;
+            if (collision.gameObject.layer == GameInfo.GroundLayer
+                && collision.GetContact(0).normal == Vector2.up) {
+
+                Vector3 vel = Rigidbody.velocity;
+                vel.y = Mathf.Sqrt(bounceHeight * gravity * 2);
+                Rigidbody.velocity =vel;
+            }
         }
     }
 }
