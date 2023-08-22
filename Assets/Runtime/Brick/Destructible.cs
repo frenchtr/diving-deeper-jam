@@ -12,8 +12,7 @@ namespace OTStudios.DDJ.Runtime.Runtime.Brick
                 foreach (var contact in collision.contacts)
                 {
                     var dot = Vector2.Dot(Vector2.up, contact.normal);
-                    Debug.Log(dot);
-                    
+
                     if (dot < -0.8f)
                     {
                         Destroy(this.gameObject);
