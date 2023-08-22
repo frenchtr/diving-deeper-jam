@@ -54,7 +54,7 @@ MonoBehaviour:
       volume: 0
   musicGroup: {fileID: -1410897285742806698, guid: a7eb886ff052847458c5f8f0ee9f5cb5, type: 2}
   soundGroup: {fileID: -9033071669401525425, guid: a7eb886ff052847458c5f8f0ee9f5cb5, type: 2}
-  masterVolumeParameter: masterVolume
-  musicVolumeParameter: musicVolume
-  soundVolumeParameter: soundVolume
+  masterVolumeParameter: MasterVolume
+  musicVolumeParameter: MusicVolume
+  soundVolumeParameter: SoundVolume
   maxVolume: 30
