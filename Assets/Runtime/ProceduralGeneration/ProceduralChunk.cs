@@ -7,6 +7,8 @@ namespace OTStudios.DDJ.Runtime.Runtime.ProceduralGeneration
     {
         [SerializeField]
         private ProceduralChunkLoader chunkLoader;
+        [SerializeField]
+        private float yOffset = 40f;
         
         private void OnTriggerExit2D(Collider2D other)
         {
@@ -20,16 +22,14 @@ namespace OTStudios.DDJ.Runtime.Runtime.ProceduralGeneration
             
             // Spawn a new chunk
             var nextChunkToInstantiate = this.chunkLoader.GetChunk();
+            var thisPosition = this.transform.position;
             var positionToSpawnAt = new Vector3()
             {
-                x = 0f,
-                y = player.transform.position.y - 10f,
-                z = 0f,
+                x = thisPosition.x,
+                y = thisPosition.y - this.yOffset,
+                z = thisPosition.z,
             };
-                Object.Instantiate(nextChunkToInstantiate, positionToSpawnAt, Quaternion.identity);
-            
-            // Despawn this chunk
-            Object.Destroy(this.gameObject);
+            Object.Instantiate(nextChunkToInstantiate, positionToSpawnAt, Quaternion.identity);
         }
     }
 }
