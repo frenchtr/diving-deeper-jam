@@ -1,10 +1,12 @@
 ﻿using System;
 using UnityEngine;
 
-namespace OTStudios.DDJ.Runtime.Runtime.Brick
+namespace OTStudios.DDJ.Runtime.Runtime.Bricks
 {
     public class Destructible : MonoBehaviour
     {
+        public event Action Destroyed;
+
         private void OnCollisionEnter2D(Collision2D collision)
         {
             if (collision.gameObject.gameObject.name == "Player")
@@ -15,10 +17,16 @@ namespace OTStudios.DDJ.Runtime.Runtime.Brick
 
                     if (dot < -0.8f)
                     {
-                        Destroy(this.gameObject);
+                        this.Destroy();
                     }
                 }
             }
+        }
+
+        public void Destroy()
+        {
+            this.Destroyed?.Invoke();
+            Destroy(this.gameObject);
         }
     }
 }

@@ -28,7 +28,7 @@ namespace OTStudios.DDJ.Runtime {
             if (health <= 0) Die();
         }
 
-        private void Die() {
+        public void Die() {
             SceneManager.ReloadScene();
         }
     }

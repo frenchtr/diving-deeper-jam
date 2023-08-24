@@ -19,7 +19,8 @@ public class SceneManager {
         LoadScene(activeScene.name);
     }
 
-    public static void LoadScene(string name) {
-        LoadScene(name);
+    public static void LoadScene(string name)
+    {
+        U.SceneManager.LoadScene(name, LoadSceneMode.Single);
     }
 }

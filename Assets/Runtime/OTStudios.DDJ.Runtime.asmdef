@@ -1,7 +1,9 @@
 {
     "name": "OTStudios.DDJ.Runtime",
     "rootNamespace": "OTStudios.DDJ.Runtime",
-    "references": [],
+    "references": [
+        "GUID:8dfe8412ce0c6e74f8efd10b2c5b9e09"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
