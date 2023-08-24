@@ -8,6 +8,24 @@ namespace OTStudios.DDJ.Runtime {
 
         [SerializeField] private GameObject mainMenuContent;
 
+        private static bool autoStart;
+        public static void Load(bool autoStart = false) {
+            MainMenu.autoStart = autoStart;
+
+            SceneManager.ReloadScene();
+        }
+
+        private void Awake() {
+            mainMenuContent.SetActive(true);
+        }
+
+        private void Start() {
+            if (autoStart) {
+                autoStart = false;
+                StartGame();
+            }
+        }
+
         public void StartGame() {
             mainMenuContent.SetActive(false);
         }
