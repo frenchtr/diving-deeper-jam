@@ -11,7 +11,8 @@ namespace OTStudios.DDJ.Runtime {
             horizontalMovementSpeed;
         [SerializeField] private float
             bounceHeight,
-            gravity;
+            gravity,
+            maxFallSpeed;
 
         [Header("Effects")]
         [SerializeField] private float
@@ -54,6 +55,8 @@ namespace OTStudios.DDJ.Runtime {
 
             vel.x = horizontalMovementSpeed * input.x;
             vel.y -= gravity * Time.deltaTime;
+
+            vel.y = Mathf.Max(vel.y, -maxFallSpeed);
 
             Rigidbody.velocity = vel;
         }

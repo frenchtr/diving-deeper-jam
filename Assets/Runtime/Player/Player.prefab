@@ -5257,8 +5257,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   horizontalMovementSpeed: 6
-  bounceHeight: 5
-  gravity: 15
+  bounceHeight: 4
+  gravity: 40
+  maxFallSpeed: 15
   maxMovementTilt: -10
   movementTiltSpeed: 0.05
   effectsTweenSpeed: 2
