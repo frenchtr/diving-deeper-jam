@@ -5260,6 +5260,9 @@ MonoBehaviour:
   bounceHeight: 4
   gravity: 40
   maxFallSpeed: 15
+  dashSpeed: 40
+  dashDuration: 0.25
+  dashCooldown: 3
   maxMovementTilt: -10
   movementTiltSpeed: 0.05
   effectsTweenSpeed: 2
@@ -5321,6 +5324,10 @@ MonoBehaviour:
     verticalAxis: Vertical
     raw: 1
     normalize: 0
+  Dash:
+    type: 0
+    keycodes: 20000000
+    mouseButton: 0
   Pause:
     type: 0
     keycodes: 1b000000

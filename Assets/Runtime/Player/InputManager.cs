@@ -12,6 +12,7 @@ namespace OTStudios.DDJ.Runtime {
 
         [Header("Movement")]
         public Axis Movement;
+        public Button Dash;
 
         [Header("Game")]
         public Button Pause;
@@ -27,6 +28,7 @@ namespace OTStudios.DDJ.Runtime {
         private void Awake() => inputs = new() {
 
             Movement,
+            Dash,
 
             Pause,
 
