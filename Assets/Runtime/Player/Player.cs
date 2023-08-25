@@ -49,6 +49,7 @@ namespace OTStudios.DDJ.Runtime {
         }
 
         protected Player            Player          => Get(p => p               );
+        protected PlayerMovement    Movement        => Get(p => p.Movement      );
         protected InputManager      Input           => Get(p => p.Input         );
         protected Rigidbody2D       Rigidbody       => Get(p => p.Rigidbody     );
         protected Animator          Animator        => Get(p => p.Animator      );

@@ -29,7 +29,11 @@ namespace OTStudios.DDJ.Runtime {
         }
 
         public void Die() {
-            SceneManager.ReloadScene();
+
+            Movement.enabled = false;
+            Rigidbody.velocity = Vector2.zero;
+
+            FindObjectOfType<GameOverMenu>().Show();
         }
     }
 }

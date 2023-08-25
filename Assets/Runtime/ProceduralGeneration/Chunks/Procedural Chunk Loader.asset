@@ -13,6 +13,4 @@ MonoBehaviour:
   m_Name: Procedural Chunk Loader
   m_EditorClassIdentifier: 
   proceduralChunks:
-  - {fileID: 8470871367576046325, guid: 87054a68a2d775b4b92982cf62c73f7d, type: 3}
-  - {fileID: 8470871367576046325, guid: 04941c7f0fcf3cc48883018e8f067529, type: 3}
-  - {fileID: 8470871367576046325, guid: 6dabf0583629eaa4aad23baf90fc5d24, type: 3}
+  - {fileID: 8650361195476438946, guid: c9f3492c777ab417f8777d6576e5ac6d, type: 3}
