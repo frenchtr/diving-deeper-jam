@@ -30,6 +30,7 @@ namespace OTStudios.DDJ.Runtime.Runtime.Bricks
                     if (dot < -0.8f)
                     {
                         this.destructible.Destroy();
+                        return;
                     }
                 }
             }

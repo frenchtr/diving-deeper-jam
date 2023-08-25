@@ -1,37 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using OTStudios.DDJ.Runtime.Runtime.Bricks;
 
 namespace OTStudios.DDJ.Runtime {
 
     public class Player : MonoBehaviour {
 
-        internal InputManager   Input       { get; private set; }
-        internal PlayerMovement Movement    { get; private set; }
-        internal Rigidbody2D    Rigidbody   { get; private set; }
-        internal Animator       Animator    { get; private set; }
-        internal PlayerHealth   Health      { get; private set; }
-        internal PlayerUI       UI          { get; private set; }
+        [field: SerializeField] internal BrickRegistry BrickRegistry { get; private set; }
+        [field: SerializeField] internal InputManager   Input       { get; private set; }
+        [field: SerializeField] internal PlayerMovement Movement    { get; private set; }
+        [field: SerializeField] internal Rigidbody2D    Rigidbody   { get; private set; }
+        [field: SerializeField] internal Animator       Animator    { get; private set; }
+        [field: SerializeField] internal PlayerHealth   Health      { get; private set; }
+        [field: SerializeField] internal PlayerUI       UI          { get; private set; }
 
         public void Enable(bool enable) {
             Movement.enabled = enable;
-        }
-
-        private void Awake() {
-
-            T Get<T>() where T : Component {
-                var t = GetComponent<T>();
-                return t != null ? t : GetComponentInChildren<T>();
-            }
-
-            Input       = Get<  InputManager    >();
-            Movement    = Get<  PlayerMovement  >();
-            Rigidbody   = Get<  Rigidbody2D     >();
-            Animator    = Get<  Animator        >();
-            Health      = Get<  PlayerHealth    >();
-            UI          = Get<  PlayerUI        >();
-
-            //Enable(true);
         }
     }
 
@@ -55,6 +40,7 @@ namespace OTStudios.DDJ.Runtime {
         protected Animator          Animator        => Get(p => p.Animator      );
         protected PlayerHealth      Health          => Get(p => p.Health        );
         protected PlayerUI          UI              => Get(p => p.UI            );
+        protected BrickRegistry     BrickRegistry   => Get(p => p.BrickRegistry );
 
         //protected new void print(object message) {
         //    UI.Log(message.ToString());

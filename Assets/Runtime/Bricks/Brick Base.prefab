@@ -158,6 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   registry: {fileID: 11400000, guid: 6d117a2cdfd0a6c47935ef91f134015c, type: 2}
+  playerStas: {fileID: 11400000, guid: e1ee146c4818b4615842b87e05569dac, type: 2}
   destructible: {fileID: 2290453475467506980}
 --- !u!114 &2290453475467506980
 MonoBehaviour:
