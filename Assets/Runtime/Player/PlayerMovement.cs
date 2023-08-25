@@ -56,7 +56,7 @@ namespace OTStudios.DDJ.Runtime {
         }
 
         private void Start() {
-            drillDrone.Init(gameObject);
+            drillDrone.Init(gameObject, AudioReferences);
             drillDrone.Play();
         }
 

@@ -5379,6 +5379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dd639d234e0f46b6935fe4f49638f71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <AudioReferences>k__BackingField: {fileID: 11400000, guid: 7280016b473294d7bb2389b7b1fb7a74, type: 2}
   <BrickRegistry>k__BackingField: {fileID: 11400000, guid: 6d117a2cdfd0a6c47935ef91f134015c, type: 2}
   <Input>k__BackingField: {fileID: 4227908006875858840}
   <Movement>k__BackingField: {fileID: 971129818236909934}
@@ -5416,7 +5417,7 @@ MonoBehaviour:
   drillDrone:
     clip:
     - {fileID: 8300000, guid: 440c8d4a910ca41149a04bbea61cabbe, type: 3}
-    volume: 0.1
+    volume: 1
     minPitch: 1
     maxPitch: 1
     sequential: 0
