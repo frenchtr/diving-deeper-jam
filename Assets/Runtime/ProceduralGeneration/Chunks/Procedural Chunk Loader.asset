@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   proceduralChunks:
   - {fileID: 8650361195476438946, guid: c9f3492c777ab417f8777d6576e5ac6d, type: 3}
+  - {fileID: 5028323056863951845, guid: 0d9034bba8aef4159909360e62383ea7, type: 3}

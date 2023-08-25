@@ -579,11 +579,11 @@ PrefabInstance:
       objectReference: {fileID: 1520837565}
     - target: {fileID: 1703435740086417835, guid: f55c5260c388e407a9fd8be54c81893b, type: 3}
       propertyPath: m_Pivot.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1703435740086417835, guid: f55c5260c388e407a9fd8be54c81893b, type: 3}
       propertyPath: m_Pivot.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1703435740086417835, guid: f55c5260c388e407a9fd8be54c81893b, type: 3}
       propertyPath: m_RootOrder
@@ -607,11 +607,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1703435740086417835, guid: f55c5260c388e407a9fd8be54c81893b, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 512
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1703435740086417835, guid: f55c5260c388e407a9fd8be54c81893b, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 288
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1703435740086417835, guid: f55c5260c388e407a9fd8be54c81893b, type: 3}
       propertyPath: m_LocalPosition.x
