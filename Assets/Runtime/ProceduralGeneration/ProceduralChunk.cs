@@ -27,7 +27,7 @@ namespace OTStudios.DDJ.Runtime.Runtime.ProceduralGeneration {
             Gizmos.DrawCube(transform.position + Vector3.up * offset, new Vector2(levelWidth, height));
         }
 
-        private void OnTriggerExit2D(Collider2D collision) {
+        private void OnTriggerEnter2D(Collider2D collision) {
 
             if (!collision.TryGetComponent(out Player player)) return;
 
