@@ -5417,7 +5417,7 @@ MonoBehaviour:
   drillDrone:
     clip:
     - {fileID: 8300000, guid: 440c8d4a910ca41149a04bbea61cabbe, type: 3}
-    volume: 1
+    volume: 0.5
     minPitch: 1
     maxPitch: 1
     sequential: 0

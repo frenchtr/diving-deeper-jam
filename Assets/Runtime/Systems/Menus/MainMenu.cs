@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using OTStudios.DDJ.Runtime.Runtime.Systems;
 
 namespace OTStudios.DDJ.Runtime {
 
@@ -30,6 +31,7 @@ namespace OTStudios.DDJ.Runtime {
         public void StartGame() {
             mainMenuContent.SetActive(false);
 
+            GameManager.StartGame();
         }
 
         public void QuitGame() {
