@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8456851897403140200}
   - component: {fileID: 8456851897403140203}
   - component: {fileID: 8456851897403140202}
+  - component: {fileID: 5219736660325899129}
   m_Layer: 0
   m_Name: CollapsingCeiling
   m_TagString: Untagged
@@ -69,8 +70,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   brickRegistry: {fileID: 11400000, guid: 6d117a2cdfd0a6c47935ef91f134015c, type: 2}
-  baseCollapseSpeed: 2
-  collapseSpeedIncrement: 0.01
+  baseCollapseSpeed: 4
+  collapseSpeedIncrement: 0.001
+--- !u!114 &5219736660325899129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8456851897403140201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 576c08bd3cec4fd393760436e56992c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  distance: 20
 --- !u!1 &8456851898751066412
 GameObject:
   m_ObjectHideFlags: 0

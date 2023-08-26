@@ -25,9 +25,18 @@ namespace OTStudios.DDJ.Runtime.Runtime.CollapsingCeiling
             get => this.collapseSpeedIncrement;
             set => this.collapseSpeedIncrement = value;
         }
+        
+        public float CollapseSpeedCurrent { get; private set; }
+
+        private void Awake()
+        {
+            this.CollapseSpeedCurrent = this.BaseCollapseSpeed;
+        }
 
         private void OnEnable()
         {
+            this.CollapseSpeedCurrent = this.BaseCollapseSpeed;
+            
             this.brickRegistry.Registered += OnBrickRegistered;
             this.brickRegistry.Deregistered += OnBrickDeregistered;
         }
@@ -40,7 +49,7 @@ namespace OTStudios.DDJ.Runtime.Runtime.CollapsingCeiling
 
         private void Update()
         {
-            this.transform.position += (Vector3)Vector2.down * BaseCollapseSpeed * Time.deltaTime;
+            this.transform.position += (Vector3)Vector2.down * CollapseSpeedCurrent * Time.deltaTime;
         }
 
         private void OnTriggerEnter2D(Collider2D other)
@@ -81,7 +90,7 @@ namespace OTStudios.DDJ.Runtime.Runtime.CollapsingCeiling
         
         private void OnDestructibleDestroyed()
         {
-            this.BaseCollapseSpeed += this.CollapseSpeedIncrement;
+            this.CollapseSpeedCurrent += this.CollapseSpeedIncrement;
         }
     }
 }
