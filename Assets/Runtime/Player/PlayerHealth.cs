@@ -33,7 +33,7 @@ namespace OTStudios.DDJ.Runtime {
             Movement.enabled = false;
             Rigidbody.velocity = Vector2.zero;
 
-            FindObjectOfType<GameOverMenu>().Show();
+            GameOverMenu.Show();
         }
     }
 }

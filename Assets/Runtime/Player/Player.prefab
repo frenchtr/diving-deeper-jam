@@ -6193,6 +6193,7 @@ MonoBehaviour:
   <Animator>k__BackingField: {fileID: 5710009012988101822}
   <Health>k__BackingField: {fileID: 3150670752671769914}
   <UI>k__BackingField: {fileID: 1694870258065420233}
+  <GameOverMenu>k__BackingField: {fileID: 7003194780788020635}
 --- !u!114 &971129818236909934
 MonoBehaviour:
   m_ObjectHideFlags: 0

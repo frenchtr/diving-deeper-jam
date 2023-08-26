@@ -15,6 +15,7 @@ namespace OTStudios.DDJ.Runtime {
         [field: SerializeField] internal Animator           Animator        { get; private set; }
         [field: SerializeField] internal PlayerHealth       Health          { get; private set; }
         [field: SerializeField] internal PlayerUI           UI              { get; private set; }
+        [field: SerializeField] internal GameOverMenu       GameOverMenu    { get; private set; }
 
         public void Enable(bool enable) {
             Movement.enabled = enable;
@@ -43,6 +44,7 @@ namespace OTStudios.DDJ.Runtime {
         protected PlayerUI          UI              => Get(p => p.UI                );
         protected BrickRegistry     BrickRegistry   => Get(p => p.BrickRegistry     );
         protected AudioReferences   AudioReferences => Get(p => p.AudioReferences   );
+        protected GameOverMenu      GameOverMenu    => Get(p => p.GameOverMenu      );
 
         //protected new void print(object message) {
         //    UI.Log(message.ToString());
