@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8555c4df0b7e468b84787e9298df1ae1, type: 3}
   m_Name: Procedural Chunk Loader
   m_EditorClassIdentifier: 
+  maxRepetitionsPerSet: 2
   proceduralChunks:
-  - {fileID: 8650361195476438946, guid: c9f3492c777ab417f8777d6576e5ac6d, type: 3}
-  - {fileID: 5028323056863951845, guid: 0d9034bba8aef4159909360e62383ea7, type: 3}
+  - prefab: {fileID: 1934093312284136237, guid: 0d9034bba8aef4159909360e62383ea7, type: 3}
+  - prefab: {fileID: 2815654802185119594, guid: c9f3492c777ab417f8777d6576e5ac6d, type: 3}
+  - prefab: {fileID: 2815654802185119594, guid: 994527aa199004c04b9488ab3d6b000b, type: 3}
+  - prefab: {fileID: 9050682980973023044, guid: 04298a262a25f44cc9effaefe51f0eb6, type: 3}
+  - prefab: {fileID: 8794038333747764266, guid: f9b29601c5ce048df8227dee7f665ed6, type: 3}
+  - prefab: {fileID: 4409243582308095891, guid: 46818081ed3014c71aae28a1cee8bcfd, type: 3}

@@ -31,7 +31,7 @@ namespace OTStudios.DDJ.Runtime.Runtime.ProceduralGeneration {
 
             if (!collision.TryGetComponent(out Player player)) return;
 
-            var newChunk = chunkLoader.GetChunk().GetComponent<ProceduralChunk>();
+            var newChunk = chunkLoader.GetChunk();
             Vector2 position = new() {
                 x = transform.position.x,
                 y = transform.position.y + offset - height / 2f - newChunk.height / 2f - newChunk.offset,
