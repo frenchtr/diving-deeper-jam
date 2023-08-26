@@ -6230,6 +6230,18 @@ MonoBehaviour:
     sequential: 0
     overlap: 1
     loop: 1
+    simultaneous: 0
+  rockPlink:
+    clip:
+    - {fileID: 8300000, guid: c42d847aaf03649fca4dbc64365e2d30, type: 3}
+    - {fileID: 8300000, guid: fa871a276eec44d8a8252c725366a0bb, type: 3}
+    volume: 1
+    minPitch: 0.8
+    maxPitch: 1.2
+    sequential: 0
+    overlap: 1
+    loop: 0
+    simultaneous: 1
 --- !u!114 &3150670752671769914
 MonoBehaviour:
   m_ObjectHideFlags: 0

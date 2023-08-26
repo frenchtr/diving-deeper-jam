@@ -10,7 +10,11 @@ public class SoundEffect {
     [Header("Parameters")]
     public float volume = 1;
     public float minPitch = 1, maxPitch = 1;
-    public bool sequential = false, overlap = true, loop = false;
+    public bool
+        sequential = false,
+        overlap = true,
+        loop = false,
+        simultaneous = false;
 
     internal AudioSource source;
 
@@ -23,6 +27,8 @@ public class SoundEffect {
             Debug.LogError($"Sound Effect on \"{host.name}\" doesn't haven't any audio clips!");
             return;
         }
+
+        if (source != null) return;
 
         source = host.AddComponent<AudioSource>();
 
@@ -54,8 +60,11 @@ public class SoundEffect {
         if (loop) {
             source.clip = currentClip;
             source.Play();
-        }
-        else source.PlayOneShot(currentClip);
+        } else if (simultaneous) {
+            foreach (var clip in clip)
+                source.PlayOneShot(clip);
+        } else
+            source.PlayOneShot(currentClip);
     }
 
     /// <summary> Stop the sound effect. </summary>
@@ -74,6 +83,10 @@ public class AudioReferences : ScriptableObject {
     [SerializeField] private float maxVolume;
 
     public AudioMixerGroup SoundMixerGroup => soundGroup;
+
+    private void OnValidate() {
+        Update();
+    }
 
     public void Update() {
 

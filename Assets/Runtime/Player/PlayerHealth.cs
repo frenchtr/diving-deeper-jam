@@ -30,8 +30,7 @@ namespace OTStudios.DDJ.Runtime {
 
         public void Die() {
 
-            Movement.enabled = false;
-            Rigidbody.velocity = Vector2.zero;
+            Player.Enable(false);
 
             GameOverMenu.Show();
         }

@@ -35,7 +35,8 @@ namespace OTStudios.DDJ.Runtime {
         [SerializeField] private Transform
             sprite;
         [SerializeField] private SoundEffect
-            drillDrone;
+            drillDrone,
+            rockPlink;
 
         private float
             tiltAmount, tiltVel,
@@ -58,7 +59,10 @@ namespace OTStudios.DDJ.Runtime {
         }
 
         private void Start() {
+
             drillDrone.Init(gameObject, AudioReferences);
+            rockPlink.Init(gameObject, AudioReferences);
+
             drillDrone.Play();
         }
 
@@ -132,7 +136,9 @@ namespace OTStudios.DDJ.Runtime {
 
                 Vector3 vel = Rigidbody.velocity;
                 vel.y = Mathf.Sqrt(bounceHeight * gravity * 2);
-                Rigidbody.velocity =vel;
+                Rigidbody.velocity = vel;
+
+                rockPlink.Play();
             }
         }
     }

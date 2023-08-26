@@ -19,6 +19,8 @@ namespace OTStudios.DDJ.Runtime {
 
         public void Enable(bool enable) {
             Movement.enabled = enable;
+
+            if (!enable) Rigidbody.velocity = Vector2.zero;
         }
     }
 
