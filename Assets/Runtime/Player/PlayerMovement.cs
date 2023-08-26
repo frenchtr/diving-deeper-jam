@@ -42,6 +42,8 @@ namespace OTStudios.DDJ.Runtime {
             effectsPercent,
             dashCooldownRemaining;
 
+        public event System.Action<float, float> dashChargeUpdate;
+
         private enum State {
             regular,
             dashing,
@@ -67,8 +69,9 @@ namespace OTStudios.DDJ.Runtime {
                 vel = Rigidbody.velocity;
 
             dashCooldownRemaining -= Time.deltaTime;
+            dashChargeUpdate?.Invoke(dashCooldownRemaining, dashCooldown);
 
-            bool dashDown = Input.Dash.Down,
+            bool dashDown = Input.Dash.Pressed,
                  canDash = dashDown && dashCooldownRemaining < 0,
                  doneDashing = stateDur > dashDuration;
 
