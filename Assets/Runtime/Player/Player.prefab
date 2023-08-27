@@ -6256,6 +6256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startHealth: 3
+  playerDiedEvent: {fileID: 11400000, guid: dc6acf5bd3804d548be0b01936a92db5, type: 2}
 --- !u!114 &1694870258065420233
 MonoBehaviour:
   m_ObjectHideFlags: 0

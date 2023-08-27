@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using OTStudios.DDJ.Runtime.Systems.ScriptableEvents;
 using UnityEngine;
 
 namespace OTStudios.DDJ.Runtime {
@@ -7,6 +8,9 @@ namespace OTStudios.DDJ.Runtime {
     public class PlayerHealth : PlayerComponent {
 
         [SerializeField] private int startHealth;
+        [Header("Events")]
+        [SerializeField]
+        private ScriptableEvent playerDiedEvent;
 
         private int health;
         public event System.Action<int> healthUpate;
@@ -33,7 +37,7 @@ namespace OTStudios.DDJ.Runtime {
             Player.Enable(false);
 
             GameOverMenu.Show();
-            
+            this.playerDiedEvent.Raise();
         }
     }
 }
