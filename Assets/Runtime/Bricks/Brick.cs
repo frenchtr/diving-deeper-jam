@@ -8,7 +8,8 @@ namespace OTStudios.DDJ.Runtime.Runtime.Bricks
         private BrickRegistry registry;
         [SerializeField]
         private Destructible destructible;
-
+        private const float upNormalThreshold = -0.8f;
+        
         private void OnEnable()
         {
             this.registry.Register(this);
@@ -25,9 +26,9 @@ namespace OTStudios.DDJ.Runtime.Runtime.Bricks
             {
                 foreach (var contact in collision.contacts)
                 {
-                    var dot = Vector2.Dot(Vector2.up, contact.normal);
-
-                    if (dot < -0.8f)
+                    var dot = Vector2.Dot(contact.normal, Vector2.up);
+                    
+                    if (dot < upNormalThreshold)
                     {
                         this.destructible.Destroy();
                         return;

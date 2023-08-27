@@ -37,7 +37,6 @@ namespace OTStudios.DDJ.Runtime.Runtime.Systems
         private void Start()
         {
             this.gameStartedEvent.Raise();
-            Debug.Log("Started!");
         }
 
         public static void StartGame() => I.StartGameInternal();
