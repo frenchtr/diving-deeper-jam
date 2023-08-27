@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brickRegistry: {fileID: 11400000, guid: 6d117a2cdfd0a6c47935ef91f134015c, type: 2}
   gameStartedEvent: {fileID: 11400000, guid: d1a8fa5ee79574441bbf88976b702739, type: 2}
+  sessionStartedEvent: {fileID: 11400000, guid: 3f3aa94907ed08843b151ef2a45783e0, type: 2}
   musicSource: {fileID: 5696718652967772522}
   musicIntro: {fileID: 8300000, guid: 02bf3ac896f56417592eb661d3771a24, type: 3}
   musicMainLoop: {fileID: 8300000, guid: 29a00c1f2c771494c935b7bdd56e1ea2, type: 3}
