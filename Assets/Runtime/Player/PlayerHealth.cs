@@ -33,6 +33,7 @@ namespace OTStudios.DDJ.Runtime {
             Player.Enable(false);
 
             GameOverMenu.Show();
+            
         }
     }
 }

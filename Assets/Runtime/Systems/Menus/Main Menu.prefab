@@ -501,12 +501,40 @@ PrefabInstance:
       value: Start
       objectReference: {fileID: 0}
     - target: {fileID: 8870868337817951423, guid: db37d79d444794e2e9795be16d686185, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8870868337817951423, guid: db37d79d444794e2e9795be16d686185, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8870868337817951423, guid: db37d79d444794e2e9795be16d686185, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 782341465}
     - target: {fileID: 8870868337817951423, guid: db37d79d444794e2e9795be16d686185, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: 3f3aa94907ed08843b151ef2a45783e0, type: 2}
+    - target: {fileID: 8870868337817951423, guid: db37d79d444794e2e9795be16d686185, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8870868337817951423, guid: db37d79d444794e2e9795be16d686185, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: StartGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 8870868337817951423, guid: db37d79d444794e2e9795be16d686185, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Raise
+      objectReference: {fileID: 0}
+    - target: {fileID: 8870868337817951423, guid: db37d79d444794e2e9795be16d686185, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: OTStudios.DDJ.Runtime.Systems.ScriptableEvents.ScriptableEvent, OTStudios.DDJ.Runtime
+      objectReference: {fileID: 0}
+    - target: {fileID: 8870868337817951423, guid: db37d79d444794e2e9795be16d686185, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db37d79d444794e2e9795be16d686185, type: 3}
